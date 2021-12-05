@@ -1,3 +1,8 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+
+#weather:
+# path: /weather/now
+# controller: App\Controller\WeatherController::getForecast
