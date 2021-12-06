@@ -2,31 +2,31 @@
 
 namespace App\Controller;
 
-use App\Service\LocationService;
-use App\Service\WeatherService;
+use App\Service\ForecastService;
+use App\Service\LocationServiceRequest;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 
 class WeatherController extends AbstractController
 {
+    private ForecastService $forecastService;
+    private LocationServiceRequest $locationService;
 
-    private WeatherService $weatherForecast;
-    private LocationService $location;
-
-    public function __construct(WeatherService $weatherForecast, LocationService $location)
+    public function __construct(ForecastService $forecastService, LocationServiceRequest $locationService)
     {
-        $this->weatherForecast = $weatherForecast;
-        $this->location = $location;
+        $this->forecastService = $forecastService;
+        $this->locationService = $locationService;
     }
 
     public function getForecast(): Response
     {
-        return $this->render('base.html.twig', ['forecast' => $this->weatherForecast->getCurrentForecast()]);
+        return $this->render('base.html.twig', ['forecast' => $this->forecastService->execute()]);
     }
 
-    public function refresh()
+    public function refresh(): RedirectResponse
     {
-        $this->location->refreshLocation();
+        $this->locationService->refreshLocation();
         return $this->redirect('/');
     }
 }
