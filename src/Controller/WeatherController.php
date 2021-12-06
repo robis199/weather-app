@@ -26,9 +26,7 @@ class WeatherController extends AbstractController
 
     public function refresh(): RedirectResponse
     {
-        $this->locationService->refreshLocation();
+        $this->locationService->refreshCurrentLocation();
         return $this->redirect('/');
     }
 }
-
-//return createNotFoundException()

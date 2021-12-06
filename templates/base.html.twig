@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="eng">
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Weather!{% endblock %}</title>
-    </head>
-    <body>
-        {% block body %}
-        {{ forecast }}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Weather!{% endblock %}</title>
+</head>
+<body>
+{% block body %}
+    {{ forecast }}
 
 
     <div style="padding-top: 3em; margin-left: 45em">
@@ -15,6 +15,6 @@
         </form>
     </div>
 
-        {% endblock %}
-    </body>
+{% endblock %}
+</body>
 </html>

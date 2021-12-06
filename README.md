@@ -19,13 +19,18 @@ Run following commands:
 
 **Setup and Usage**
 
-Database url needs to be placed in .env file in case you are using Dbal, otherwise choose an appropriate driver
-API keys for retrieving data are available at ipstack.com and openweathermap.org
-Store your keys as ENV variables in the .env file
+Database url needs to be placed in .env file in case you are using Dbal, otherwise choose an appropriate driver. 
+
+API keys for retrieving data are available at ipstack.com and openweathermap.org.
+
+Store your keys as ENV variables in the .env file.
+
+Also, configure a real IP address in the same place since the local server has a default address which won't return anything.
 
 
 
-access the application in your browser at the given URL (https://localhost:8000 by default).
+
+- access the application in your browser at the given URL (https://localhost:8000 by default).
 
 
 

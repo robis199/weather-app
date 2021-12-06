@@ -1,8 +1,8 @@
 getForecast:
-    path: /
-    controller: App\Controller\WeatherController::getForecast
+  path: /
+  controller: App\Controller\WeatherController::getForecast
 
 
 refresh:
-    path: /
-    controller: App\Controller\WeatherController::refresh
+  path: /
+  controller: App\Controller\WeatherController::refresh
