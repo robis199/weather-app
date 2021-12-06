@@ -23,9 +23,9 @@ class OpenWeatherApiRepository implements ForecastRepository
     {
         $url = self::BASE_URL . $currentLocation . "&units=metric&appid=$this->apiKey";
 
-        return $this->client->request(
+        return json_encode($this->client->request(
             'GET',
-            $url)->getContent();
+            $url)->getContent(), JSON_PRETTY_PRINT);
 
     }
 }
